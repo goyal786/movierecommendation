@@ -63,10 +63,55 @@ movierecommendation-main/
 
 ---
 
-## ⚙️ Installation and Setup
+## 🧠 How It Works
 
-### 1️⃣ Clone the Repository
-```bash
-git clone https://github.com/<your-username>/movierecommendation.git
-cd movierecommendation-main/movierecom 
+1.Data Preprocessing
+
+- Combines tmdb_5000_movies.csv and tmdb_5000_credits.csv
+
+- Extracts relevant features: genres, keywords, cast, crew, overview
+
+- Cleans and formats data for model training
+
+2.Feature Engineering
+
+- Converts text-based features into vectorized form using CountVectorizer
+
+- Each movie is represented as a numerical vector
+
+3.Similarity Computation
+
+- Computes cosine similarity between all movie vectors
+
+- Stores this matrix in similarity.pkl for fast retrieval
+
+4.Recommendation Function
+
+- When a user enters a movie name, the app retrieves the top 5 most similar movies
+
+- Displays them dynamically via Streamlit UI
+
+---
+
+## 🎥 Example Output
+
+If you search for "The Dark Knight", you might get:
+
+| Rank | Recommended Movie     |
+|:----:|:----------------------|
+| 1️⃣  | Batman Begins         |
+| 2️⃣  | The Dark Knight Rises |
+| 3️⃣  | Man of Steel          |
+| 4️⃣  | Iron Man              |
+| 5️⃣  | Spider-Man 2          |
+
+---
+
+## 🪪 License
+
+This project is licensed under the MIT License — see the LICENSE
+ file for details.
+
+
+
 
